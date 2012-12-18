@@ -3,9 +3,11 @@ main: net.lazlecraft.LazleCore.LazleCore
 version: 1.3
 description: Basic Info commands for LazleCraft
 website: http://LazleCraft.net
-author: LaxWasHere, Lazle
+author: LaxWasHere
 commands:
     lazlecraft:
         description: Shows icon menu.
     laxwashere:
         description: Because he was never here.
+    join:
+        description: joins the games

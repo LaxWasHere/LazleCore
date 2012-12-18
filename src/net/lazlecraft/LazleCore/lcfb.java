@@ -8,22 +8,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-//CE for LazleCraft - LazleGames
-public class lcmd implements CommandExecutor {
-	
+public class lcfb implements CommandExecutor {
+
 	private LazleCore plugin;
 	
-	public lcmd(LazleCore plugin)
+	public lcfb(LazleCore plugin)
 	{
 		this.plugin = plugin;
 	}
-
 	 @Override
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
 	            Player p = ((Player) se).getPlayer();
 	            IconMenu menu = new IconMenu("Menu", 27, new IconMenu.OptionClickEventHandler() {
-	 
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
 	                    String name = ChatColor.stripColor(event.getName());

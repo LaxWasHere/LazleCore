@@ -8,41 +8,39 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-//CE for LazleCraft - LazleGames
-public class lcmd implements CommandExecutor {
+public class lcpvp implements CommandExecutor {
 	
 	private LazleCore plugin;
 	
-	public lcmd(LazleCore plugin)
+	public lcpvp(LazleCore plugin)
+	
 	{
 		this.plugin = plugin;
 	}
-
 	 @Override
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
 	            Player p = ((Player) se).getPlayer();
 	            IconMenu menu = new IconMenu("Menu", 27, new IconMenu.OptionClickEventHandler() {
-	 
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
 	                    String name = ChatColor.stripColor(event.getName());
 	                    if (name.equalsIgnoreCase("Website")) {
 	                    	se.sendMessage("§aVisit us at http://LazleCraft.net");
 	                    } else if (name.equalsIgnoreCase("Donate")) {
-                                se.sendMessage("§7=============================================");
-                                se.sendMessage("§aPlease click the link below to donate");
-                                se.sendMessage("§6§lClick --> http://Store.LazleCraft.net");
-                                se.sendMessage("§7=============================================");
-                            } else if (name.equalsIgnoreCase("Staff")) {
-                                se.sendMessage("§7=============================================");
-                                se.sendMessage("§6Owner - Lazle");
-                                se.sendMessage("§6Admin - LaxWasHere");
-                                se.sendMessage("§bMod - xPickleHead15x");
-                                se.sendMessage("§bMod - Colby97");
-                                se.sendMessage("§bMod - LisaatjeN");
-                                se.sendMessage("§7=============================================");
-                           
+                             se.sendMessage("§7=============================================");
+                             se.sendMessage("§aPlease click the link below to donate");
+                             se.sendMessage("§6§lClick --> http://Store.LazleCraft.net");
+                             se.sendMessage("§7=============================================");
+                         } else if (name.equalsIgnoreCase("Staff")) {
+                             se.sendMessage("§7=============================================");
+                             se.sendMessage("§6Owner - Lazle");
+                             se.sendMessage("§6Admin - LaxWasHere");
+                             se.sendMessage("§bMod - xPickleHead15x");
+                             se.sendMessage("§bMod - Colby97");
+                             se.sendMessage("§bMod - LisaatjeN");
+                             se.sendMessage("§7=============================================");
+                        
 	                    }
 	                }
 	            }, plugin);

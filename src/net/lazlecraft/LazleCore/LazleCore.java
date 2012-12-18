@@ -9,15 +9,41 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class LazleCore extends JavaPlugin {
 	
-    @Override
-    public void onEnable() {
-    	//LazleGames CE
-    	getCommand("lazlecraft").setExecutor(new lcmd(this));
-    	
-        PluginDescriptionFile plugin = getDescription();
-        //Let's add a useless line.
-        System.out.println(plugin.getName() + " version " + plugin.getVersion() + " by LaxWasHere enabled.");
-    }
+	
+	@Override
+	
+	public void onEnable() 
+	
+	{
+	    //gen config
+	    getConfig().options().copyDefaults(true);
+	    this.saveDefaultConfig();
+	 
+	    int servers = getConfig().getInt("server");
+	 
+	    if(servers == 1) 
+	    {
+	        getCommand("lazlecraft").setExecutor(new lcmd(this));
+	        getCommand("join").setExecutor(new join(this));
+	    } 
+	    else if(servers == 2) 
+	    {
+	        getCommand("lazlecraft").setExecutor(new lcsb(this));
+	    } 
+	    else if(servers == 3)
+	    {
+	        getCommand("lazlecraft").setExecutor(new lcfb(this));
+	    }
+	    else
+	    {
+	        getCommand("lazlecraft").setExecutor(new lcpvp(this));
+	    }
+	 
+	 
+	    PluginDescriptionFile plugin = getDescription();
+	    //Let's add a useless line.
+	    System.out.println(plugin.getName() + " version " + plugin.getVersion() + " by LaxWasHere enabled.");
+	}
 
     @Override
     public void onDisable() {
