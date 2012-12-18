@@ -25,18 +25,26 @@ public class LazleCore extends JavaPlugin {
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcmd(this));
 	        getCommand("join").setExecutor(new join(this));
+	        System.out.println("Config Detected for LazleGames Server.");
+	        System.out.println("Using lcmd CommandExecutor");
 	    } 
 	    else if(servers == 2) 
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcsb(this));
+	        System.out.println("Config Detected for Skyblock Server.");
+	        System.out.println("Using lcsb CommandExecutor");
 	    } 
 	    else if(servers == 3)
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcfb(this));
+	        System.out.println("Config Detected for Freebuild Server.");
+	        System.out.println("Using lcfb CommandExecutor");
 	    }
-	    else
+	    else if(servers == 4)
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcpvp(this));
+	        System.out.println("Config Detected for PVP Server.");
+	        System.out.println("Using lcpvp CommandExecutor");
 	    }
 	 
 	 
