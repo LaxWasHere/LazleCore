@@ -35,8 +35,6 @@ public class lcsb implements CommandExecutor {
                              se.sendMessage("§7=============================================");
                              se.sendMessage("§6Owner - Lazle");
                              se.sendMessage("§6Admin - LaxWasHere");
-                             se.sendMessage("§bMod - xPickleHead15x");
-                             se.sendMessage("§bMod - Colby97");
                              se.sendMessage("§bMod - LisaatjeN");
                              se.sendMessage("§7=============================================");
                         

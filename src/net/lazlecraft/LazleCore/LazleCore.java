@@ -1,5 +1,6 @@
 package net.lazlecraft.LazleCore;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -18,8 +19,12 @@ public class LazleCore extends JavaPlugin {
 	    //gen config
 	    getConfig().options().copyDefaults(true);
 	    this.saveDefaultConfig();
-	 
+	    // BungeeCoord
+	    Bukkit.getMessenger().registerOutgoingPluginChannel(this, "RubberBand");
+	    
 	    int servers = getConfig().getInt("server");
+	    //Golbal CE
+	    getCommand("server").setExecutor(new server(this));
 	 
 	    if(servers == 1) 
 	    {
@@ -45,6 +50,12 @@ public class LazleCore extends JavaPlugin {
 	        getCommand("lazlecraft").setExecutor(new lcpvp(this));
 	        System.out.println("Config Detected for PVP Server.");
 	        System.out.println("Using lcpvp CommandExecutor");
+	    }
+	    else
+	    {
+	    	System.out.println("No servers defined in the config");
+	    	System.out.println("Disabling plugin.");
+	    	Bukkit.getPluginManager().disablePlugin(this);
 	    }
 	 
 	 

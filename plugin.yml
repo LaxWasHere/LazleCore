@@ -1,6 +1,6 @@
 name: LazleCore
 main: net.lazlecraft.LazleCore.LazleCore
-version: 1.3
+version: 2.0
 description: Basic Info commands for LazleCraft
 website: http://LazleCraft.net
 author: LaxWasHere
@@ -11,3 +11,5 @@ commands:
         description: Because he was never here.
     join:
         description: joins the games
+    server:
+        description: choose a server.
