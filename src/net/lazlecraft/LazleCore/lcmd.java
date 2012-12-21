@@ -21,7 +21,7 @@ public class lcmd implements CommandExecutor {
 	 @Override
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
-	            Player p = ((Player) se).getPlayer();
+	            final Player p = ((Player) se).getPlayer();
 	            IconMenu menu = new IconMenu("Menu", 27, new IconMenu.OptionClickEventHandler() {
 	 
 	                @Override
@@ -36,12 +36,16 @@ public class lcmd implements CommandExecutor {
                                 se.sendMessage("§7=============================================");
                             } else if (name.equalsIgnoreCase("Staff")) {
                                 se.sendMessage("§7=============================================");
-                                se.sendMessage("§6Owner - Lazle");
-                                se.sendMessage("§6Admin - LaxWasHere");
+                                se.sendMessage("§aOwner - Lazle");
+                                se.sendMessage("§aAdmin - LaxWasHere");
                                 se.sendMessage("§bMod - xPickleHead15x");
                                 se.sendMessage("§bMod - Colby97");
                                 se.sendMessage("§bMod - LisaatjeN");
                                 se.sendMessage("§7=============================================");
+                            } else if (name.equalsIgnoreCase("Reconnect")) {
+                            	p.performCommand("lazlegames");
+                            } else if (name.equalsIgnoreCase("Logout")) {
+                            	p.kickPlayer("You have been logged out");
                            
 	                    }
 	                }
@@ -49,6 +53,9 @@ public class lcmd implements CommandExecutor {
 	            menu.setOption(1, new ItemStack(Material.EMERALD, 1), "§a§lWebsite", "§6Tells you the LazleCraft website");
 	            menu.setOption(2, new ItemStack(Material.GOLD_INGOT, 1), "§6§lDonate", "§aSupport LazleCraft!");
 	            menu.setOption(3, new ItemStack(Material.NETHER_STAR, 1), "§b§lStaff", "§dList all the LazleCraft staff");
+	            menu.setOption(26, new ItemStack(Material.TRAP_DOOR, 1), "§b§lReconnect", "§6Log out and Log back in.");
+	            menu.setOption(27, new ItemStack(Material.BEDROCK, 1), "§7§lLogout", "§6Logs you out of the server.");
+	            
 	            menu.open(p);
 	            return true;
 	        }

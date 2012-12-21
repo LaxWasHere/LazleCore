@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+//CE for LazleCraft Skyblock
 public class lcfb implements CommandExecutor {
 
 	private LazleCore plugin;

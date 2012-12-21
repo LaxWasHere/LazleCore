@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+//server GUI
 public class server implements CommandExecutor {
 	
 	private LazleCore plugin;
@@ -19,30 +20,31 @@ public class server implements CommandExecutor {
 	 @Override
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
-	            Player p = ((Player) se).getPlayer();
+	            final Player p = ((Player) se).getPlayer();
 	            IconMenu menu = new IconMenu("§a§lChoose a server.", 9, new IconMenu.OptionClickEventHandler() {
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
 	                    String name = ChatColor.stripColor(event.getName());
+	                    //use player.performCommand to utilized LazleCloud
 	                    if (name.equalsIgnoreCase("Hub")) {
-	                    	//redir hub
+	                    	p.performCommand("hub");
 	                    } else if (name.equalsIgnoreCase("LazleGames")) {
-	                    	//redir lgames
+	                    	p.performCommand("lazlegames");
                       } else if (name.equalsIgnoreCase("Skyblock")) {
-                          //redir Skyblock
+                          p.performCommand("skyblock");
                       } else if (name.equalsIgnoreCase("Freebuild")) {
-                    	  // redir freebuild
+                    	  p.performCommand("freebuild");
                       } else if (name.equalsIgnoreCase("PVP")){
-                    	  //redir pvp
+                    	  p.performCommand("pvp");
                      
 	                    }
 	                }
 	            }, plugin);
 	            menu.setOption(2, new ItemStack(Material.NETHER_STAR, 1), "§a§lHub", "§6Sends you the the Hub server.");
-	            menu.setOption(3, new ItemStack(Material.CARROT_STICK, 1), "§6§lLazleGames", "§aSends you to the LazleGames server.");
-	            menu.setOption(4, new ItemStack(Material.CHEST, 1), "§b§lSkyblock", "§dSend you to the SkyBlock server.");
-	            menu.setOption(5, new ItemStack(Material.BEACON, 1), "§b§lFreebuild", "§dSend you to the Freebuild server.");
-	            menu.setOption(6, new ItemStack(Material.DIAMOND_SWORD, 1), "§b§lPVP", "§dSends you to the pvp server.");
+	            menu.setOption(3, new ItemStack(Material.CARROT_STICK, 1), "§a§lLazleGames", "§6Sends you to the LazleGames server.");
+	            menu.setOption(4, new ItemStack(Material.CHEST, 1), "§a§lSkyblock", "§6Sends you to the SkyBlock server.");
+	            menu.setOption(5, new ItemStack(Material.BEACON, 1), "§a§lFreebuild", "§6Sends you to the Freebuild server.");
+	            menu.setOption(6, new ItemStack(Material.DIAMOND_SWORD, 1), "§a§lPVP", "§6Sends you to the pvp server.");
 	            menu.open(p);
 	            return true;
 	        }

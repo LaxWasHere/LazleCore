@@ -59,15 +59,11 @@ public class LazleCore extends JavaPlugin {
 	    }
 	 
 	 
-	    PluginDescriptionFile plugin = getDescription();
-	    //Let's add a useless line.
-	    System.out.println(plugin.getName() + " version " + plugin.getVersion() + " by LaxWasHere enabled.");
 	}
 
     @Override
     public void onDisable() {
-        PluginDescriptionFile plugin = getDescription();
-        System.out.println(plugin.getName() + " version " + plugin.getVersion() + " by LaxWasHere disabled.");
+        System.out.println("Disabled");
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {

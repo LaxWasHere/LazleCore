@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+//CE for LazleCraft PVP server
 public class lcpvp implements CommandExecutor {
 	
 	private LazleCore plugin;
