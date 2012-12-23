@@ -27,7 +27,11 @@ public class join implements CommandExecutor {
 	                    String name = ChatColor.stripColor(event.getName());
 	                    if (name.equalsIgnoreCase("Survival Games")) {
 	                    	((Player) se).performCommand("sg join");
-	                    }
+	                    } else if (name.equalsIgnoreCase("TF2")) {
+	                    ((Player) se).performCommand("tf2 join");
+	                } else if (name.equalsIgnoreCase("Spleef")) {
+	                	((Player) se).performCommand("spl join");
+	                }
 	                }
 	            }, plugin);
 	            menu.setOption(1, new ItemStack(Material.EMERALD, 1), "§a§lSurvival Games", "§aJoin the Survival Games!");

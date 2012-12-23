@@ -5,12 +5,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LazleCore extends JavaPlugin {
 	
-	
+	public String prefix = "[LazleCore]";
 	@Override
 	
 	public void onEnable() 
@@ -19,7 +18,13 @@ public class LazleCore extends JavaPlugin {
 	    //gen config
 	    getConfig().options().copyDefaults(true);
 	    this.saveDefaultConfig();
-	    // BungeeCoord
+	    
+	    // Register listeners
+	    // getServer().getPluginManager().registerEvents(new ListnrClass(), this);
+	    
+	    // Custom Recipes
+	    
+	    // Register BungeeCoord Channel
 	    Bukkit.getMessenger().registerOutgoingPluginChannel(this, "RubberBand");
 	    
 	    int servers = getConfig().getInt("server");
@@ -30,32 +35,32 @@ public class LazleCore extends JavaPlugin {
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcmd(this));
 	        getCommand("join").setExecutor(new join(this));
-	        System.out.println("Config Detected for LazleGames Server.");
-	        System.out.println("Using lcmd CommandExecutor");
+	        System.out.println(prefix + " Config Detected for LazleGames Server.");
+	        System.out.println(prefix + " Using lcmd CommandExecutor");
 	    } 
 	    else if(servers == 2) 
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcsb(this));
-	        System.out.println("Config Detected for Skyblock Server.");
-	        System.out.println("Using lcsb CommandExecutor");
+	        System.out.println(prefix + " Config Detected for Skyblock Server.");
+	        System.out.println(prefix + " Using lcsb CommandExecutor");
 	    } 
 	    else if(servers == 3)
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcfb(this));
-	        System.out.println("Config Detected for Freebuild Server.");
-	        System.out.println("Using lcfb CommandExecutor");
+	        System.out.println(prefix + " Config Detected for Freebuild Server.");
+	        System.out.println(prefix + " Using lcfb CommandExecutor");
 	    }
 	    else if(servers == 4)
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcpvp(this));
-	        System.out.println("Config Detected for PVP Server.");
-	        System.out.println("Using lcpvp CommandExecutor");
+	        System.out.println(prefix + " Config Detected for PVP Server.");
+	        System.out.println(prefix + " Using lcpvp CommandExecutor");
 	    }
 	    else
 	    {
-	    	System.out.println("No servers defined in the config");
-	    	System.out.println("Disabling plugin.");
-	    	Bukkit.getPluginManager().disablePlugin(this);
+	    	System.out.println("No servers defined in the config!");
+	    	//Disabled atm System.out.println("Disabling plugin.");
+	    	//Bukkit.getPluginManager().disablePlugin(this);
 	    }
 	 
 	 
