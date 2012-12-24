@@ -20,7 +20,7 @@ public class join implements CommandExecutor {
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
 	            Player p = ((Player) se).getPlayer();
-	            IconMenu menu = new IconMenu("Menu", 27, new IconMenu.OptionClickEventHandler() {
+	            IconMenu menu = new IconMenu("§aJoin a game", 27, new IconMenu.OptionClickEventHandler() {
 	 
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
@@ -34,9 +34,9 @@ public class join implements CommandExecutor {
 	                }
 	                }
 	            }, plugin);
-	            menu.setOption(1, new ItemStack(Material.EMERALD, 1), "§a§lSurvival Games", "§aJoin the Survival Games!");
-	            menu.setOption(2, new ItemStack(Material.GOLD_INGOT, 1), "§6§lTF2", "§aJoin Team Fortress 2!");
-	            menu.setOption(3, new ItemStack(Material.NETHER_STAR, 1), "§6§lSpleef", "§aJoin Spleef!");
+	            menu.setOption(3, new ItemStack(Material.EMERALD, 1), "§a§lSurvival Games", "§6Join the Survival Games!");
+	            menu.setOption(4, new ItemStack(Material.GOLD_INGOT, 1), "§a§lTF2", "§6Join Team Fortress 2!");
+	            menu.setOption(5, new ItemStack(Material.NETHER_STAR, 1), "§a§lSpleef", "§6Join Spleef!");
 	            menu.open(p);
 	            return true;
 	        }

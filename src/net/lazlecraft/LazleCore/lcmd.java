@@ -22,37 +22,42 @@ public class lcmd implements CommandExecutor {
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
 	            final Player p = ((Player) se).getPlayer();
-	            IconMenu menu = new IconMenu("§a§lLazleGames", 27, new IconMenu.OptionClickEventHandler() {
+	            IconMenu menu = new IconMenu("§aLazleGames", 27, new IconMenu.OptionClickEventHandler() {
 	 
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
 	                    String name = ChatColor.stripColor(event.getName());
 	                    if (name.equalsIgnoreCase("Website")) {
-	                    	se.sendMessage("§6=============================================");
-	                    	se.sendMessage("§aVisit us at http://LazleCraft.net");
-	                    	se.sendMessage("§6=============================================");
+	                    	p.sendMessage("§6=============================================");
+	                    	p.sendMessage("§aVisit us at http://LazleCraft.net");
+	                    	p.sendMessage("§6=============================================");
 	                    } else if (name.equalsIgnoreCase("Donate")) {
-                                se.sendMessage("§7=============================================");
-                                se.sendMessage("§aPlease click the link below to donate");
-                                se.sendMessage("§6§lClick --> http://Store.LazleCraft.net");
-                                se.sendMessage("§7==============================================");
+                                p.sendMessage("§7=============================================");
+                                p.sendMessage("§aPlease click the link below to donate");
+                                p.sendMessage("§6§lClick --> http://Store.LazleCraft.net");
+                                p.sendMessage("§7==============================================");
                             } else if (name.equalsIgnoreCase("Staff")) {
-                                se.sendMessage("§7==============================================");
-                                se.sendMessage("§aOwner - Lazle");
-                                se.sendMessage("§aAdmin - LaxWasHere");
-                                se.sendMessage("§bMod - xPickleHead15x");
-                                se.sendMessage("§bMod - Colby97");
-                                se.sendMessage("§bMod - LisaatjeN");
-                                se.sendMessage("§7=============================================");
+                                p.sendMessage("§7==============================================");
+                                p.sendMessage("§aOwner - Lazle");
+                                p.sendMessage("§aAdmin - LaxWasHere");
+                                p.sendMessage("§bMod - xPickleHead15x");
+                                p.sendMessage("§bMod - Colby97");
+                                p.sendMessage("§bMod - LisaatjeN");
+                                p.sendMessage("§7=============================================");
                             } else if (name.equalsIgnoreCase("SG Stats")) {
-                                se.sendMessage("§7=============================================");
-                            	se.sendMessage("§Click the link below to checck your Survival Games stats");  
-                                se.sendMessage("§bhttp://sg.lcrft.in/" + se.getName());
-                                se.sendMessage("§7=============================================");
+                                p.sendMessage("§7=============================================");
+                            	p.sendMessage("§6Click the link below to checck your Survival Games stats");  
+                                p.sendMessage("§bhttp://sg.lcrft.in/" + se.getName());
+                                p.sendMessage("§7=============================================");
                             } else if (name.equalsIgnoreCase("Reconnect")) {
                             	p.performCommand("lazlegames");
                             } else if (name.equalsIgnoreCase("Logout")) {
                             	p.kickPlayer("You have been logged out");
+                            } else {
+                            	p.sendMessage("You have to choose one");
+                            
+                            	
+	                    
                            
 	                    }
 	                }

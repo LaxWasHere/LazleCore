@@ -58,7 +58,7 @@ public class LazleCore extends JavaPlugin {
 	    }
 	    else
 	    {
-	    	System.out.println("No servers defined in the config!");
+	    	System.out.println(prefix + "No servers defined in the config!");
 	    	//Disabled atm System.out.println("Disabling plugin.");
 	    	//Bukkit.getPluginManager().disablePlugin(this);
 	    }
@@ -68,7 +68,7 @@ public class LazleCore extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        System.out.println("Disabled");
+        System.out.println(prefix + "/lazlecraft commands is now disabled");
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
