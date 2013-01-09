@@ -9,7 +9,7 @@ commands:
         description: Shows icon menu.
     laxwashere:
         description: Because he was never here.
-    join:
-        description: joins the games
     server:
         description: choose a server.
+    walls:
+        description: Choose a walls server.

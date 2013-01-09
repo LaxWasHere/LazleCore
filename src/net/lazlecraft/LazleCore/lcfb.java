@@ -26,7 +26,9 @@ public class lcfb implements CommandExecutor {
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
 	                    String name = ChatColor.stripColor(event.getName());
 	                    if (name.equalsIgnoreCase("Website")) {
+	                    	se.sendMessage("§7=============================================");
 	                    	se.sendMessage("§aVisit us at http://LazleCraft.net");
+	                    	se.sendMessage("§7=============================================");
 	                    } else if (name.equalsIgnoreCase("Donate")) {
                                 se.sendMessage("§7=============================================");
                                 se.sendMessage("§aPlease click the link below to donate");
@@ -42,9 +44,9 @@ public class lcfb implements CommandExecutor {
 	                    }
 	                }
 	            }, plugin);
-	            menu.setOption(1, new ItemStack(Material.EMERALD, 1), "§a§lWebsite", "§6Tells you the LazleCraft website");
-	            menu.setOption(2, new ItemStack(Material.GOLD_INGOT, 1), "§6§lDonate", "§aSupport LazleCraft!");
-	            menu.setOption(3, new ItemStack(Material.NETHER_STAR, 1), "§b§lStaff", "§dList all the LazleCraft staff");
+	            menu.setOption(2, new ItemStack(Material.EMERALD, 1), "§a§lWebsite", "§6Tells you the LazleCraft website");
+	            menu.setOption(3, new ItemStack(Material.GOLD_INGOT, 1), "§6§lDonate", "§aSupport LazleCraft!");
+	            menu.setOption(4, new ItemStack(Material.NETHER_STAR, 1), "§b§lStaff", "§dList all the LazleCraft staff");
 	            menu.open(p);
 	            return true;
 	        }

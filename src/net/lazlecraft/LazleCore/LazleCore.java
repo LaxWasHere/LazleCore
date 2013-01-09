@@ -30,11 +30,11 @@ public class LazleCore extends JavaPlugin {
 	    int servers = getConfig().getInt("server");
 	    //Golbal CE
 	    getCommand("server").setExecutor(new server(this));
+	    getCommand("walls").setExecutor(new walls(this));
 	 
 	    if(servers == 1) 
 	    {
 	        getCommand("lazlecraft").setExecutor(new lcmd(this));
-	        getCommand("join").setExecutor(new join(this));
 	        System.out.println(prefix + " Config Detected for LazleGames Server.");
 	        System.out.println(prefix + " Using lcmd CommandExecutor");
 	    } 
@@ -58,7 +58,7 @@ public class LazleCore extends JavaPlugin {
 	    }
 	    else
 	    {
-	    	System.out.println(prefix + "No servers defined in the config!");
+	    	System.out.println(prefix + " No servers defined in the config!");
 	    	//Disabled atm System.out.println("Disabling plugin.");
 	    	//Bukkit.getPluginManager().disablePlugin(this);
 	    }

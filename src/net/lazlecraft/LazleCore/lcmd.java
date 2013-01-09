@@ -47,7 +47,7 @@ public class lcmd implements CommandExecutor {
                             } else if (name.equalsIgnoreCase("SG Stats")) {
                                 p.sendMessage("§7=============================================");
                             	p.sendMessage("§6Click the link below to checck your Survival Games stats");  
-                                p.sendMessage("§bhttp://sg.lcrft.in/" + se.getName());
+                                p.sendMessage("§blaxwashere.net/sg/?user=" + se.getName());
                                 p.sendMessage("§7=============================================");
                             } else if (name.equalsIgnoreCase("Reconnect")) {
                             	p.performCommand("lazlegames");

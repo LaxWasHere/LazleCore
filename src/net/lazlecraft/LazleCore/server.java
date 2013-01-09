@@ -36,6 +36,8 @@ public class server implements CommandExecutor {
                     	  p.performCommand("freebuild");
                       } else if (name.equalsIgnoreCase("PVP")){
                     	  p.performCommand("pvp");
+                      } else if (name.equalsIgnoreCase("Event")){
+                    	  p.performCommand("event");
                      
 	                    }
 	                }
@@ -45,6 +47,7 @@ public class server implements CommandExecutor {
 	            menu.setOption(4, new ItemStack(Material.CHEST, 1), "§a§lSkyblock", "§6Sends you to the SkyBlock server.");
 	            menu.setOption(5, new ItemStack(Material.BEACON, 1), "§a§lFreebuild", "§6Sends you to the Freebuild server.");
 	            menu.setOption(6, new ItemStack(Material.DIAMOND_SWORD, 1), "§a§lPVP", "§6Sends you to the pvp server.");
+	            menu.setOption(7, new ItemStack(Material.BOW, 1), "§a§lEvent", "§6Sends you to the event server.");
 	            menu.open(p);
 	            return true;
 	        }
