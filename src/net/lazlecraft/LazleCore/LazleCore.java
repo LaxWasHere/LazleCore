@@ -5,9 +5,12 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class LazleCore extends JavaPlugin {
+public class LazleCore extends JavaPlugin implements Listener {
 	
 	public String prefix = "[LazleCore]";
 	@Override
@@ -20,17 +23,15 @@ public class LazleCore extends JavaPlugin {
 	    this.saveDefaultConfig();
 	    
 	    // Register listeners
-	    // getServer().getPluginManager().registerEvents(new ListnrClass(), this);
-	    
+	    getServer().getPluginManager().registerEvents(this, this);
 	    // Custom Recipes
 	    
 	    // Register BungeeCoord Channel
 	    Bukkit.getMessenger().registerOutgoingPluginChannel(this, "RubberBand");
 	    
-	    int servers = getConfig().getInt("server");
+	    int servers = getConfig().getInt("servers");
 	    //Golbal CE
-	    getCommand("server").setExecutor(new server(this));
-	    getCommand("walls").setExecutor(new walls(this));
+	    getCommand("servers").setExecutor(new server(this));
 	 
 	    if(servers == 1) 
 	    {
@@ -70,7 +71,13 @@ public class LazleCore extends JavaPlugin {
     public void onDisable() {
         System.out.println(prefix + "/lazlecraft commands is now disabled");
     }
-
+    @EventHandler
+    public void onPlayerjoin(PlayerJoinEvent event) {
+    	Player p = event.getPlayer();
+    	Bukkit.getServer().dispatchCommand(p.getServer().getConsoleSender(), "spawn " + p.getName());
+    	//debug
+    	System.out.println("Sent " + p.getName() + " to spawn.");
+        }
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) {
         	//because he's a naughty console.

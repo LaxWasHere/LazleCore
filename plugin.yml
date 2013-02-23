@@ -11,5 +11,3 @@ commands:
         description: Because he was never here.
     server:
         description: choose a server.
-    walls:
-        description: Choose a walls server.
