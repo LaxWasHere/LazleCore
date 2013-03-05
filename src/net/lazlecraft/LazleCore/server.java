@@ -21,7 +21,7 @@ public class server implements CommandExecutor {
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
 	            final Player p = ((Player) se).getPlayer();
-	            IconMenu menu = new IconMenu("§a§lChoose a server.", 9, new IconMenu.OptionClickEventHandler() {
+	            IconMenu menu = new IconMenu("ï¿½aï¿½lChoose a server." + p.getDisplayName(),  9, new IconMenu.OptionClickEventHandler() {
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
 	                    String name = ChatColor.stripColor(event.getName());
@@ -38,16 +38,19 @@ public class server implements CommandExecutor {
                     	  p.performCommand("pvp");
                       } else if (name.equalsIgnoreCase("Event")){
                     	  p.performCommand("event");
-                     
-	                    }
+                      } else if (name.equalsIgnoreCase("BowWarfare")){
+                    	  p.performCommand("bowwarfare");
+                      } else if (name.equalsIgnoreCase("kitpvp")){
+                    	  p.performCommand("kitpvp");
+                      }
 	                }
 	            }, plugin);
-	            menu.setOption(2, new ItemStack(Material.NETHER_STAR, 1), "§a§lHub", "§6Sends you the the Hub server.");
-	            menu.setOption(3, new ItemStack(Material.CARROT_STICK, 1), "§a§lLazleGames", "§6Sends you to the LazleGames server.");
-	            menu.setOption(4, new ItemStack(Material.CHEST, 1), "§a§lSkyblock", "§6Sends you to the SkyBlock server.");
-	            menu.setOption(5, new ItemStack(Material.BEACON, 1), "§a§lFreebuild", "§6Sends you to the Freebuild server.");
-	            menu.setOption(6, new ItemStack(Material.DIAMOND_SWORD, 1), "§a§lPVP", "§6Sends you to the pvp server.");
-	            menu.setOption(7, new ItemStack(Material.BOW, 1), "§a§lEvent", "§6Sends you to the event server.");
+	            menu.setOption(2, new ItemStack(Material.NETHER_STAR, 1), "ï¿½aï¿½lHub", "ï¿½6Sends you the the Hub server.");
+	            menu.setOption(3, new ItemStack(Material.CARROT_STICK, 1), "ï¿½aï¿½lLazleGames", "ï¿½6Sends you to the LazleGames server.");
+	            menu.setOption(4, new ItemStack(Material.CHEST, 1), "ï¿½aï¿½lSkyblock", "ï¿½6Sends you to the SkyBlock server.");
+	            menu.setOption(5, new ItemStack(Material.BEACON, 1), "ï¿½aï¿½lFreebuild", "ï¿½6Sends you to the Freebuild server.");
+	            menu.setOption(6, new ItemStack(Material.DIAMOND_SWORD, 1), "ï¿½aï¿½lPVP", "ï¿½6Sends you to the pvp server.");
+	            menu.setOption(7, new ItemStack(Material.BOW, 1), "ï¿½aï¿½lEvent", "ï¿½6Sends you to the event server.");
 	            menu.open(p);
 	            return true;
 	        }
