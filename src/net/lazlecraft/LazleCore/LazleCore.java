@@ -74,7 +74,11 @@ public class LazleCore extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerjoin(PlayerJoinEvent event) {
     	Player p = event.getPlayer();
-    	Bukkit.getServer().dispatchCommand(p.getServer().getConsoleSender(), "spawn " + p.getName());
+    	
+    	if(e.getPlayer().hasPlayedBefore())
+    	{
+    		Bukkit.getServer().dispatchCommand(p.getServer().getConsoleSender(), "spawn " + p.getName());
+    	}
     	//debug
     	System.out.println("Sent " + p.getName() + " to spawn.");
         }
