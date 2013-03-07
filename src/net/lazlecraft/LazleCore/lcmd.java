@@ -22,7 +22,7 @@ public class lcmd implements CommandExecutor {
 	    public boolean onCommand(final CommandSender se, Command cmd, String label, String[] args) {
 	        if (se instanceof Player) {
 	            final Player p = ((Player) se).getPlayer();
-	            IconMenu menu = new IconMenu("§aLazleGames", 27, new IconMenu.OptionClickEventHandler() {
+	            IconMenu menu = new IconMenu("§aLazleGames" + se.getDisplayName , 27, new IconMenu.OptionClickEventHandler() {
 	 
 	                @Override
 	                public void onOptionClick(IconMenu.OptionClickEvent event) {
